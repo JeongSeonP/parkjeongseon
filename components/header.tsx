@@ -36,13 +36,13 @@ export default function Header() {
         <ul className="flex ">
           {hashLinks.map((link) => (
             <li
-              className={`relative mx-2 w-24 h-10 font-medium rounded-full text-zinc-600 hover:text-slate-900 ${
-                selectedMenu === link.name && "text-slate-900"
-              }`}
+              className="relative mx-2 w-24 h-10 font-medium rounded-full text-zinc-600 hover:text-slate-900"
               key={link.name}
             >
               <Link
-                className="flex justify-center items-center size-full   "
+                className={`flex justify-center items-center size-full ${
+                  selectedMenu === link.name && "text-slate-900"
+                }`}
                 href={link.hash}
                 onClick={() => setSelectedMenu(link.name)}
               >
