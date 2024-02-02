@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply flex flex-col items-center bg-indigo-50/70;
+  @apply flex flex-col items-center bg-stone-100;
 }
 
 .dark body {

@@ -11,7 +11,7 @@ export default function Header() {
 
   return (
     <motion.header
-      className="z-[999] fixed flex flex-col sm:flex-row sm:justify-between sm:px-12 items-center sm:w-4/5 w-full sm:mt-4 p-2 bg-white/90 dark:bg-slate-950/80 sm:rounded-full backdrop-blur-sm shadow-md shadow-slate-500/5 dark:shadow-none"
+      className="z-[999] fixed flex flex-col sm:flex-row sm:justify-between sm:px-12 items-center sm:w-4/5 w-full sm:mt-4 p-2 sm:p-1 bg-white/90 dark:bg-slate-950/80 sm:rounded-full backdrop-blur-sm shadow-md shadow-slate-500/5 dark:shadow-none"
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
     >
@@ -35,10 +35,10 @@ export default function Header() {
         </Link>
       </h1>
       <nav>
-        <ul className="flex ">
+        <ul className="flex">
           {hashLinks.map((link) => (
             <li
-              className="relative mx-2 w-24 h-10 font-medium rounded-full text-zinc-600 dark:text-zinc-400 hover:text-slate-900"
+              className="relative mx-2 w-24 h-10  text-sm font-bold rounded-full text-zinc-600 dark:text-zinc-400 hover:text-slate-900"
               key={link.name}
             >
               <Link

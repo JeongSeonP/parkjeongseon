@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { MdMailOutline } from "react-icons/md";
+import { HiOutlineEnvelope } from "react-icons/hi2";
 
 export default function Intro() {
   return (
@@ -13,7 +14,7 @@ export default function Intro() {
     >
       <div className="w-full relative mt-3 mb-4">
         <motion.div
-          className="mx-auto bg-amber-50/80 dark:bg-slate-700/80 blur-xl w-full h-24 sm:w-1/2 sm:h-20 rounded-full "
+          className="mx-auto bg-amber-50 dark:bg-cyan-950 blur-xl w-full h-28 sm:w-1/2 sm:h-20 rounded-full "
           initial={{ scale: 1 }}
           animate={{ scale: [1.1, 1] }}
         ></motion.div>
@@ -25,7 +26,8 @@ export default function Intro() {
           <p className="font-normal">안녕하세요. </p>
           <div className="sm:flex-row flex-col">
             <p className="inline-block">
-              다른 일 많이 해본 프론트엔드 개발 주니어{" "}
+              <span className="font-normal">다른 일 많이 해본 </span>
+              주니어 프론트엔드 개발자{" "}
             </p>
             <p className="inline-block">
               <span className="text-xl pl-2"> 박정선 </span>
@@ -56,7 +58,7 @@ export default function Intro() {
 
       <div>
         <div>
-          <MdMailOutline />
+          <HiOutlineEnvelope />
         </div>
         <div>
           <MdMailOutline />

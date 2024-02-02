@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
-import { Noto_Sans_KR } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { getCurTheme } from "@/utils/getCurTheme";
 import Header from "@/components/header";
 import SettingView from "@/components/settingView";
 
-const notoSansKR = Noto_Sans_KR({ subsets: ["latin"] });
+const notoSansKR = Montserrat({
+  subsets: ["latin"],
+  weight: ["100", "300", "400", "500"],
+});
 
 export const metadata: Metadata = {
   title: "박정선 | 프론트엔드",
