@@ -13,14 +13,14 @@ export default function Intro() {
     >
       <div className="w-full relative mt-3 mb-4">
         <motion.div
-          className="mx-auto bg-white blur w-full h-24 sm:w-1/2 sm:h-16 rounded-full "
-          initial={{ y: 100, scale: 0.3 }}
-          animate={{ y: 0, scale: 1 }}
+          className="mx-auto bg-amber-50/80 dark:bg-slate-700/80 blur-xl w-full h-24 sm:w-1/2 sm:h-20 rounded-full "
+          initial={{ scale: 1 }}
+          animate={{ scale: [1.1, 1] }}
         ></motion.div>
         <motion.div
-          className="absolute inset-0 font-bold text-center text-lg text-slate-900"
-          initial={{ y: 100, scale: 0.3 }}
-          animate={{ y: 0, scale: 1 }}
+          className="absolute inset-0 font-bold text-center text-lg text-slate-900 dark:text-gray-300"
+          animate={{ scale: [1.1, 1] }}
+          transition={{ type: "spring", damping: 10, stiffness: 100 }}
         >
           <p className="font-normal">안녕하세요. </p>
           <div className="sm:flex-row flex-col">
@@ -55,7 +55,12 @@ export default function Intro() {
       </motion.div>
 
       <div>
-        <MdMailOutline />
+        <div>
+          <MdMailOutline />
+        </div>
+        <div>
+          <MdMailOutline />
+        </div>
       </div>
     </section>
   );

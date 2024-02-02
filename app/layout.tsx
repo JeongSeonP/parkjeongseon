@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
+import { getCurTheme } from "@/utils/getCurTheme";
 import Header from "@/components/header";
+import SettingView from "@/components/settingView";
 
 const notoSansKR = Noto_Sans_KR({ subsets: ["latin"] });
 
@@ -10,16 +12,18 @@ export const metadata: Metadata = {
   description: "박정선을 소개합니다.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const curTheme = await getCurTheme();
   return (
-    <html lang="en" className="!scroll-smooth">
+    <html lang="en" className={`${curTheme} !scroll-smooth`}>
       <body className={notoSansKR.className}>
         <Header />
         {children}
+        <SettingView />
       </body>
     </html>
   );
