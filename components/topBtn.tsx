@@ -11,14 +11,11 @@ const TopBtn = () => {
       <button
         type="button"
         onClick={scrollToTop}
-        className=" rounded-full bg-white/50  shadow-md"
+        className=" rounded-full bg-white/90 border border-indigo-300 shadow-lg backdrop-blur-sm"
       >
         <span className="sr-only">최상단이동버튼</span>
         <div className="p-3 hover:animate-bounce">
-          <BiArrowToTop
-            className="text-gray-500 dark:text-gray-100"
-            size="20"
-          />
+          <BiArrowToTop className="text-gray-500" size="20" />
         </div>
       </button>
     </>

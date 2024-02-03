@@ -16,7 +16,7 @@ export default function ThemeSwitch({
   };
   return (
     <button
-      className="p-3 rounded-full bg-white/50  shadow-md"
+      className="p-3 rounded-full bg-white/90 border border-indigo-300 shadow-lg backdrop-blur-sm"
       type="button"
       onClick={handleThemeMode}
     >
@@ -29,7 +29,7 @@ export default function ThemeSwitch({
         {curTheme === "light" ? (
           <RiSunFill size={20} className="text-amber-500" />
         ) : (
-          <TbMoonFilled size={20} className="text-amber-200" />
+          <TbMoonFilled size={20} className="text-yellow-400" />
         )}
       </motion.div>
     </button>

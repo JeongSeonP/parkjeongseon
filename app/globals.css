@@ -3,9 +3,27 @@
 @tailwind utilities;
 
 body {
-  @apply flex flex-col items-center bg-stone-100;
+  @apply flex flex-col items-center bg-stone-100 text-zinc-800;
 }
 
 .dark body {
-  @apply bg-slate-900 text-gray-50;
+  @apply bg-slate-900 text-gray-300;
+}
+
+@keyframes pulse-in-light {
+  50% {
+    color: #1d2a8b;
+  }
+}
+
+@keyframes pulse-in-dark {
+  50% {
+    color: #5f6feb;
+  }
+}
+#animate-puls-text {
+  animation: pulse-in-light 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+.dark #animate-puls-text {
+  animation: pulse-in-dark 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
