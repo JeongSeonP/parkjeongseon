@@ -3,3 +3,5 @@ export const hashLinks = [
   { name: "About", hash: "#about" },
   { name: "Projects", hash: "#projects" },
 ] as const;
+
+export type MenuName = (typeof hashLinks)[number]["name"];

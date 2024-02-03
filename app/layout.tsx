@@ -1,9 +1,10 @@
+import "./globals.css";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
-import "./globals.css";
 import { getCurTheme } from "@/utils/getCurTheme";
 import Header from "@/components/header";
 import SettingView from "@/components/settingView";
+import RecoilProvider from "@/recoil/recoilProvider";
 
 const notoSansKR = Montserrat({
   subsets: ["latin"],
@@ -24,9 +25,11 @@ export default async function RootLayout({
   return (
     <html lang="en" className={`${curTheme} !scroll-smooth`}>
       <body className={notoSansKR.className}>
-        <Header />
-        {children}
-        <SettingView />
+        <RecoilProvider>
+          <Header />
+          {children}
+          <SettingView />
+        </RecoilProvider>
       </body>
     </html>
   );

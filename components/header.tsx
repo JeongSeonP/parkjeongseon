@@ -4,10 +4,11 @@ import { hashLinks } from "@/lib/hashLinks";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useRecoilState } from "recoil";
+import { menuState } from "@/recoil/menuAtom";
 
 export default function Header() {
-  const [selectedMenu, setSelectedMenu] = useState("Home");
+  const [selectedMenu, setSelectedMenu] = useRecoilState(menuState);
 
   return (
     <motion.header
@@ -18,7 +19,7 @@ export default function Header() {
       <h1 className="mb-2">
         <Link href="/">
           <motion.div
-            className="rounded-full bg-slate-500 shadow hover:bg-slate-400 "
+            className="rounded-full border-2 border-gray-300 bg-white dark:bg-gray-400 shadow hover:bg-slate-200 dark:hover:bg-slate-500"
             whileHover={{
               rotate: [0, 30],
             }}
@@ -38,13 +39,13 @@ export default function Header() {
         <ul className="flex">
           {hashLinks.map((link) => (
             <li
-              className="relative mx-2 w-24 h-10  text-sm font-bold rounded-full text-zinc-600 dark:text-zinc-400 hover:text-slate-900"
+              className="relative mx-2 w-24 h-8  text-sm font-bold rounded-full text-zinc-500 dark:text-zinc-400 hover:text-zinc-900"
               key={link.name}
             >
               <Link
                 className={`flex justify-center items-center size-full ${
                   selectedMenu === link.name &&
-                  "text-slate-900 dark:text-zinc-50"
+                  "text-zinc-900 dark:text-zinc-50"
                 }`}
                 href={link.hash}
                 onClick={() => setSelectedMenu(link.name)}
@@ -52,7 +53,7 @@ export default function Header() {
                 {link.name}
                 {link.name === selectedMenu && (
                   <motion.div
-                    className="absolute size-full -z-10 rounded-full bg-gray-100 dark:bg-gray-800"
+                    className="absolute size-full -z-10 rounded-full bg-gray-100 dark:bg-gray-800 shadow"
                     layoutId="selectedMenu"
                   />
                 )}
