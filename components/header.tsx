@@ -3,6 +3,7 @@
 import { hashLinks } from "@/lib/hashLinks";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import logo from "@/public/assets/logo.png";
 import Image from "next/image";
 import { useRecoilState } from "recoil";
 import { menuState } from "@/recoil/menuAtom";
@@ -16,21 +17,15 @@ export default function Header() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
     >
-      <h1 className="mb-2">
+      <h1 className="mb-2 sm:mb-0">
         <Link href="/">
           <motion.div
-            className="rounded-full border-2 border-gray-300 bg-white dark:bg-gray-400 shadow hover:bg-slate-200 dark:hover:bg-slate-500"
+            className="rounded-full border-2 border-slate-300 bg-white dark:bg-gray-400 shadow hover:bg-slate-200 dark:hover:bg-slate-500"
             whileHover={{
               rotate: [0, 30],
             }}
           >
-            <Image
-              src={"/assets/logo.png"}
-              alt="logo"
-              width={50}
-              height={50}
-              priority
-            />
+            <Image src={logo} alt="logo" width={50} height={50} priority />
           </motion.div>
           <span className="sr-only">박정선 포트폴리오</span>
         </Link>

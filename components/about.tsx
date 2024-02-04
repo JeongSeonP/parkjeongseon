@@ -1,17 +1,17 @@
 export default function About() {
   return (
     <section
-      className="w-11/12 mx-auto text-center pb-16 scroll-mt-36"
+      className="w-11/12 mx-auto text-center pb-28 scroll-mt-36"
       id="about"
     >
       <div className="relative mb-10">
         <div className="mx-auto bg-slate-200 dark:bg-cyan-950 blur-lg w-44 h-16 rounded-full" />
         <h2 className="absolute inset-0  flex items-center justify-center h-16 font-bold text-xl">
-          About me
+          About Me
         </h2>
       </div>
       <div className="flex items-center justify-center  text-center">
-        <div className="w-full sm:w-3/5 ">
+        <div className="w-full sm:w-1/2 ">
           <p>
             문제가 생기더라도 <span className="font-bold">주체적인 입장</span>
             에서 고민하여{" "}
