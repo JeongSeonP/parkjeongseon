@@ -1,6 +1,24 @@
+"use client";
+
+import { menuState } from "@/recoil/menuAtom";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import { useSetRecoilState } from "recoil";
+
 export default function About() {
+  const setSelectedMenu = useSetRecoilState(menuState);
+  const [observeTarget, inView] = useInView({ threshold: 1.0 });
+
+  useEffect(() => {
+    console.log(inView);
+    if (inView) {
+      setSelectedMenu("About");
+    }
+  }, [inView, setSelectedMenu]);
+
   return (
     <section
+      ref={observeTarget}
       className="w-11/12 mx-auto text-center pb-28 scroll-mt-36"
       id="about"
     >

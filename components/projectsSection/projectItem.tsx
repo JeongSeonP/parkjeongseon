@@ -1,6 +1,6 @@
 "use client";
 
-import { ProjectData, linkIcons, myProjects } from "@/lib/myProjects";
+import { ProjectData, linkIcons } from "@/lib/myProjects";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";

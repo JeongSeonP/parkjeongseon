@@ -1,6 +1,6 @@
+import React from "react";
 import { ProjectData, myProjects } from "@/lib/myProjects";
 import ProjectItem from "./projectItem";
-import React from "react";
 
 export default function Projects() {
   return (

@@ -2,9 +2,9 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import { getCurTheme } from "@/utils/getCurTheme";
-import Header from "@/components/header";
-import SettingView from "@/components/settingView";
+import Header from "@/components/common/header";
 import RecoilProvider from "@/recoil/recoilProvider";
+import SettingView from "@/components/common/settingView";
 
 const notoSansKR = Montserrat({
   subsets: ["latin"],
