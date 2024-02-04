@@ -13,19 +13,18 @@ export default function ProjectItem({ project }: { project: ProjectData }) {
     target: ref,
     offset: ["0 1", "0.9 1"],
   });
-
   const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.7, 1]);
 
   return (
     <motion.div
-      className="relative max-w-xl  bg-gray-200 dark:bg-gray-700 hover:bg-gray-200/70 px-5 sm:px-16 py-6 rounded-md  border border-gray-300 dark:border-gray-500"
+      className="relative max-w-xl bg-gray-200 dark:bg-gray-700 hover:bg-gray-200/70  rounded-md  border border-gray-300 dark:border-gray-500"
       ref={ref}
       style={{
         scale: scaleProgress,
       }}
     >
       <article
-        className="flex flex-col justify-center items-center"
+        className="flex flex-col justify-center items-center px-5 sm:px-16 py-6"
         key={project.name}
       >
         <div className="text-lg font-bold text-slate-700 dark:text-indigo-200 mb-3">
@@ -52,7 +51,7 @@ export default function ProjectItem({ project }: { project: ProjectData }) {
             />
           </div>
         </a>
-        <div className="absolute flex gap-2 top-2 right-10">
+        <div className="absolute flex gap-2 -top-2 right-1 sm:top-2 sm:right-10">
           {project.relatedLink.map((link) => (
             <a
               key={link.title}
