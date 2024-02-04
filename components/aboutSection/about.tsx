@@ -1,20 +1,10 @@
 "use client";
 
-import { menuState } from "@/recoil/menuAtom";
-import { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
-import { useSetRecoilState } from "recoil";
+import useSetMenuInView from "@/hooks/useSetMenuInView";
 
 export default function About() {
-  const setSelectedMenu = useSetRecoilState(menuState);
-  const [observeTarget, inView] = useInView({ threshold: 1.0 });
-
-  useEffect(() => {
-    console.log(inView);
-    if (inView) {
-      setSelectedMenu("About");
-    }
-  }, [inView, setSelectedMenu]);
+  const observeThreshold = 1.0;
+  const observeTarget = useSetMenuInView("About", observeThreshold);
 
   return (
     <section

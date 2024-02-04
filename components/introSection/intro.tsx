@@ -4,10 +4,14 @@ import Image from "next/image";
 import profileImg from "@/public/assets/profile.jpg";
 import { motion } from "framer-motion";
 import { profileDatas } from "@/lib/profileDatas";
+import useSetMenuInView from "@/hooks/useSetMenuInView";
 
 export default function Intro() {
+  const observeThreshold = 1.0;
+  const observeTarget = useSetMenuInView("Home", observeThreshold);
   return (
     <section
+      ref={observeTarget}
       className="w-11/12 mx-auto text-center pb-20 scroll-mt-36"
       id="home"
     >

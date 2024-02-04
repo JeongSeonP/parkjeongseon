@@ -1,10 +1,16 @@
+"use client";
+
 import React from "react";
 import { ProjectData, myProjects } from "@/lib/myProjects";
 import ProjectItem from "./projectItem";
+import useSetMenuInView from "@/hooks/useSetMenuInView";
 
 export default function Projects() {
+  const observeThreshold = 0.3;
+  const observeTarget = useSetMenuInView("Projects", observeThreshold);
   return (
     <section
+      ref={observeTarget}
       className="w-11/12 mx-auto text-center pb-16 scroll-mt-36"
       id="projects"
     >
