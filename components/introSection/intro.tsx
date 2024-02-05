@@ -7,7 +7,7 @@ import { profileDatas } from "@/lib/profileDatas";
 import useSetMenuInView from "@/hooks/useSetMenuInView";
 
 export default function Intro() {
-  const observeThreshold = 1.0;
+  const observeThreshold = 0.5;
   const observeTarget = useSetMenuInView("Home", observeThreshold);
   return (
     <section
