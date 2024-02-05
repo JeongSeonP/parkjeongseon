@@ -11,9 +11,9 @@ export default function ProjectItem({ project }: { project: ProjectData }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["0 1", "0.9 1"],
+    offset: ["0 1", "0.6 1"],
   });
-  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.7, 1]);
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
   return (
     <motion.div
